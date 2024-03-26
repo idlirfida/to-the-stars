@@ -1,0 +1,19 @@
+// IMPORT PARTIALS
+
+@use './variables' as *;
+@use './typography' as *;
+
+
+// MEDIA QUERIES
+
+@mixin tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
