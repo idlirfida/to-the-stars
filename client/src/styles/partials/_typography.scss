@@ -1,0 +1,43 @@
+// IMPORT FONTS
+
+// Main Page Font
+
+@font-face {
+    font-family: 'Buenard';
+    src: url('/src/assets/fonts/Buenard-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/Buenard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Buenard';
+    src: url('/src/assets/fonts/Buenard-Bold.woff2') format('woff2'),
+        url('/src/assets/fonts/Buenard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Nav Menu Font
+
+@font-face {
+    font-family: 'Nanum Brush Script';
+    src: url('/src/assets/fonts/NanumBrush.woff2') format('woff2'),
+        url('/src/assets/fonts/NanumBrush.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Page Heading Font
+
+@font-face {
+    font-family: 'Bungee Hairline';
+    src: url('/src/assets/fonts/BungeeHairline-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/BungeeHairline-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,50 @@
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+
+exports.seed = async function (knex) {
+    await knex("posts").del();
+    await knex("posts").insert([
+        {
+            user_id: 1,
+            post_type: 'text',
+            post_title: 'Test Post 1',
+            post_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus. Praesent ac accumsan urna. Sed interdum, metus ac tempus iaculis, sapien sapien ultricies leo, ut elementum sapien risus quis ipsum. Aenean eu elit eu mauris ornare pulvinar. Suspendisse sapien ligula, aliquet et ornare id, lobortis eget tellus. Maecenas ac tempus libero. Suspendisse condimentum hendrerit tempus. Duis in volutpat tortor. Donec vitae velit accumsan, congue massa ut, imperdiet orci. Curabitur molestie lectus vitae ligula viverra tempor. Vestibulum in ante ac nisl ornare vestibulum. Duis in consectetur purus. Sed pharetra eros et volutpat vestibulum.',
+            post_file: '',
+            date_posted: Date.now()
+        },
+        {
+            user_id: 1,
+            post_type: 'text',
+            post_title: 'Test Post 2',
+            post_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus. Praesent ac accumsan urna. Sed interdum, metus ac tempus iaculis, sapien sapien ultricies leo, ut elementum sapien risus quis ipsum. Aenean eu elit eu mauris ornare pulvinar. Suspendisse sapien ligula, aliquet et ornare id, lobortis eget tellus. Maecenas ac tempus libero. Suspendisse condimentum hendrerit tempus. Duis in volutpat tortor. Donec vitae velit accumsan, congue massa ut, imperdiet orci. Curabitur molestie lectus vitae ligula viverra tempor. Vestibulum in ante ac nisl ornare vestibulum. Duis in consectetur purus. Sed pharetra eros et volutpat vestibulum.',
+            post_file: '',
+            date_posted: Date.now()
+        },
+        {
+            user_id: 2,
+            post_type: 'photo',
+            post_title: 'Test Post 3',
+            post_body: '',
+            post_file: '007.jpg',
+            date_posted: Date.now()
+        },
+        {
+            user_id: 2,
+            post_type: 'photo',
+            post_title: '',
+            post_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat.',
+            post_file: '008.jpg',
+            date_posted: Date.now()
+        },
+        {
+            user_id: 1,
+            post_type: 'photo',
+            post_title: 'Test Post 5',
+            post_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat.',
+            post_file: '009.jpg',
+            date_posted: Date.now()
+        },
+    ]);
+};
