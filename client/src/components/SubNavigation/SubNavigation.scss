@@ -1,0 +1,17 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.subnav {
+    @include nav-font;
+    text-align: center;
+
+    &__link {
+        text-decoration: none;
+        padding: .2rem;
+        color: blue;
+    }
+
+    &__link.active {
+        color: red;
+    }
+}

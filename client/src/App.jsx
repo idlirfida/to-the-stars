@@ -13,9 +13,22 @@ function App() {
             <div className="page-wrapper">
                 <Header />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/phin" element={<PhinPage />} />
-                    <Route path="/liri" element={<LiriPage />} />
+                    <Route path="/" element={<HomePage />}>
+                        <Route path="musings" element={<HomePage />} />
+                        <Route path="photos" element={<HomePage />} />
+                        <Route path="music" element={<HomePage />} />
+                    </Route>
+                    <Route path="/phin" element={<PhinPage />}>
+                        {/* <Route path="everything" element={<PhinPage />} /> */}
+                        <Route path="musings" element={<PhinPage />} />
+                        <Route path="photos" element={<PhinPage />} />
+                    </Route>
+                    <Route path="/liri" element={<LiriPage />}>
+                        {/* <Route path="everything" element={<LiriPage />} /> */}
+                        <Route path="musings" element={<LiriPage />} />
+                        <Route path="photos" element={<LiriPage />} />
+                        <Route path="music" element={<LiriPage />} />
+                    </Route>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />

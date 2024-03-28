@@ -17,3 +17,17 @@
         @content;
     }
 }
+
+// FONT SELECTION
+
+@mixin main-font {
+    font-family: Buenard, serif;
+}
+
+@mixin nav-font {
+    font-family: 'Nanum Brush Script', sans-serif;
+}
+
+@mixin header-font {
+    font-family: 'Bungee Hairline', sans-serif;
+}
