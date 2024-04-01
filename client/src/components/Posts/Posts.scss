@@ -1,2 +1,42 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+.posts {
+
+
+    // Posts > Single Post
+
+    &__post {
+
+    }
+
+    // Posts > Single Post > Title
+
+    &__title {
+
+    }
+
+    // Posts > Single Post > Meta
+
+    &__meta {
+
+    }
+
+    &__date {
+
+    }
+
+    &__author {
+
+    }
+
+    // Posts > Single Post > Body
+
+    &__body {
+
+    }
+
+    &__paragraph {
+
+    }
+}

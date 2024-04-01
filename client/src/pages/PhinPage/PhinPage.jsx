@@ -2,7 +2,7 @@ import "./PhinPage.scss";
 import SubNavigation from "../../components/SubNavigation/SubNavigation";
 import Posts from "../../components/Posts/Posts";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 
 function PhinPage() {
@@ -34,7 +34,10 @@ function PhinPage() {
             console.error('Having some trouble fetching te requested response!', err);
         }
     }
-    getPosts();
+
+    useEffect(() => {
+        getPosts();
+    }, [apiPath]);
 
     return (
         <div>

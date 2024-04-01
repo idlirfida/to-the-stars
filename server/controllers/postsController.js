@@ -1,6 +1,14 @@
 // initialize knex
 const knex = require('knex')(require('../knexfile'));
 
+// import environment variables
+require('dotenv').config();
+
+// store images and music paths
+imagesPath = process.env.IMAGES_PATH;
+musicPath = process.env.MUSIC_PATH;
+
+
 /*
  * GET ALL POSTS
  */
@@ -18,7 +26,8 @@ const getAllPosts = async (_req, res) => {
 // GET ALL MUSINGS
 const getAllMusings = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got all musings!');
+        const data = await knex('posts').where('post_type', 'text');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -27,7 +36,8 @@ const getAllMusings = async (_req, res) => {
 // GET ALL PHOTOS
 const getAllPhotos = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got all photos!');
+        const data = await knex('posts').where('post_type', 'photo');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -36,7 +46,8 @@ const getAllPhotos = async (_req, res) => {
 // GET ALL MUSIC
 const getAllMusic = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got all music!');
+        const data = await knex('posts').where('post_type', 'music');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -47,28 +58,37 @@ const getAllMusic = async (_req, res) => {
  * GET PHIN'S POSTS
  */
 
-// GET EVERYTHING
+// GET ALL PHIN POSTS
 const getPhinPosts = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Phin posts!');
+        const data = await knex('posts').where('user_id', '2');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
 }
 
-// GET ALL MUSINGS
+// GET PHIN MUSINGS
 const getPhinMusings = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Phin musings!');
+        const data = await knex('posts')
+            .where('user_id', '2')
+            .where('post_type', 'text');
+
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
 }
 
-// GET ALL PHOTOS
+// GET PHIN PHOTOS
 const getPhinPhotos = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Phin photos!');
+        const data = await knex('posts')
+            .where('user_id', '2')
+            .where('post_type', 'photo');
+
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -79,10 +99,11 @@ const getPhinPhotos = async (_req, res) => {
  * GET LIRI'S POSTS
  */
 
-// GET EVERYTHING
+// GET ALL LIRI POSTS
 const getLiriPosts = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Liri posts!');
+        const data = await knex('posts').where('user_id', '1');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -91,7 +112,11 @@ const getLiriPosts = async (_req, res) => {
 // GET LIRI MUSINGS
 const getLiriMusings = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Liri musings!');
+        const data = await knex('posts')
+            .where('user_id', '1')
+            .where('post_type', 'text');
+
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -100,7 +125,11 @@ const getLiriMusings = async (_req, res) => {
 // GET LIRI PHOTOS
 const getLiriPhotos = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Liri photos!');
+        const data = await knex('posts')
+            .where('user_id', '1')
+            .where('post_type', 'photo');
+            
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }
@@ -109,7 +138,11 @@ const getLiriPhotos = async (_req, res) => {
 // GET LIRI MUSIC
 const getLiriMusic = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got Liri music!');
+        const data = await knex('posts')
+            .where('user_id', '1')
+            .where('post_type', 'music');
+            
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }

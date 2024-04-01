@@ -12,12 +12,8 @@ function SubNavigation() {
     let basePath, everythingPath = ''; // default for HomePage
 
     // set basePath based on useLocation-provided pathname
-    if (pathname === '/phin') {
-        everythingPath = '/phin'
-    } else if (pathname.includes('/phin')) {
+    if (pathname.includes('/phin')) {
         basePath = '/phin';
-    } else if (pathname === '/liri') {
-        everythingPath = '/liri'
     } else if (pathname.includes('/liri')) {
         basePath = '/liri';
     }

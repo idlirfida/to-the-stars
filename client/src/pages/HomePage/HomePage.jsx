@@ -37,7 +37,7 @@ function HomePage() {
 
     useEffect(() => {
         getPosts();
-    }, []);
+    }, [apiPath]);
 
 
     return (
