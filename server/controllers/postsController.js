@@ -1,5 +1,5 @@
 // initialize knex
-// const knex = require('knex')(require('../knexfile'));
+const knex = require('knex')(require('../knexfile'));
 
 /*
  * GET ALL POSTS
@@ -8,7 +8,8 @@
 // GET EVERYTHING
 const getAllPosts = async (_req, res) => {
     try {
-        res.status(200).send('You did it! You got all posts!');
+        const data = await knex('posts');
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).send('Error retrieving the requested resource!');
     }

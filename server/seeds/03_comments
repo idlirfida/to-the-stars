@@ -10,22 +10,19 @@ exports.seed = async function (knex) {
             id: 1,
             post_id: 1,
             user_id: 3,
-            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus.',
-            date_commented: Date.now()
+            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus.'
         },
         {
             id: 2,
             post_id: 1,
             user_id: 4,
-            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat.',
-            date_commented: Date.now()
+            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat.'
         },
         {
             id: 3,
             post_id: 2,
             user_id: 3,
-            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus.',
-            date_commented: Date.now()
+            comment_body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida ligula quam, non malesuada ante ultrices id. Aenean urna nibh, scelerisque quis malesuada eget, scelerisque nec erat. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus. Nam nec tincidunt quam, ut auctor velit. Mauris dictum laoreet tincidunt. Vestibulum lobortis sagittis tempus.'
         },
     ]);
 };

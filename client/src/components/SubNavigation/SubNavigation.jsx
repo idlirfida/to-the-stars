@@ -3,15 +3,21 @@ import { useLocation, NavLink } from "react-router-dom";
 
 
 function SubNavigation() {
+
+    // get current path
     const location = useLocation();
     const { pathname } = location;
 
     // determine the base path
-    let basePath = ''; // default for HomePage
+    let basePath, everythingPath = ''; // default for HomePage
 
     // set basePath based on useLocation-provided pathname
-    if (pathname.includes('/phin')) {
+    if (pathname === '/phin') {
+        everythingPath = '/phin'
+    } else if (pathname.includes('/phin')) {
         basePath = '/phin';
+    } else if (pathname === '/liri') {
+        everythingPath = '/liri'
     } else if (pathname.includes('/liri')) {
         basePath = '/liri';
     }
@@ -23,7 +29,6 @@ function SubNavigation() {
 
     return (
         <div className="subnav">
-            <NavLink to={`${basePath}`} className='subnav__link'>EVERYTHING</NavLink>
             <NavLink to={resolvePath('musings')} className='subnav__link'>MUSINGS</NavLink>
             <NavLink to={resolvePath('photos')} className='subnav__link'>PHOTOS</NavLink>
             {
