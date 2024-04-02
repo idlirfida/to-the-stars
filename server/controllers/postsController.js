@@ -1,13 +1,6 @@
 // initialize knex
 const knex = require('knex')(require('../knexfile'));
 
-// import environment variables
-require('dotenv').config();
-
-// store images and music paths
-imagesPath = process.env.IMAGES_PATH;
-musicPath = process.env.MUSIC_PATH;
-
 
 /*
  * GET ALL POSTS

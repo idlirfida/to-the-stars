@@ -1,8 +1,8 @@
 import "./Header.scss";
 import { useLocation, NavLink } from "react-router-dom";
-import homeImage from "../../assets/images/pictures/003.jpg";
+import homeImage from "../../assets/images/pictures/010.jpg";
 import phinImage from "../../assets/images/pictures/001.jpg";
-import liriImage from "../../assets/images/pictures/009.jpg";
+import liriImage from "../../assets/images/pictures/004.jpg";
 
 function Header() {
     // init useLocation hook

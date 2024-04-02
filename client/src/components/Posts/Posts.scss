@@ -2,41 +2,89 @@
 @use '../../styles/partials/mixins' as *;
 
 .posts {
-
+    width: 90%;
+    margin: auto;
 
     // Posts > Single Post
 
     &__post {
-
+        color: $primary-dark;
+        margin-bottom: 1rem;
     }
 
     // Posts > Single Post > Title
 
+    &__title-container {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
     &__title {
-
-    }
-
-    // Posts > Single Post > Meta
-
-    &__meta {
-
-    }
-
-    &__date {
-
-    }
-
-    &__author {
-
+        font-size: 2rem;
+        color: $primary-dark;
+        opacity: 0.4;
     }
 
     // Posts > Single Post > Body
+    
+    &__body-container {
 
-    &__body {
+    }
+
+    // photo
+    
+    &__photo-container {
+        margin-bottom: 1rem;
+    }
+    
+    &__photo {
+
+    }
+
+    // text
+
+    &__text-container {
 
     }
 
     &__paragraph {
+        margin-bottom: 1rem;
+        opacity: 0.7;
+        text-align: justify;
+        
+        @include tablet {
+            text-align: left;
+            line-height: 1.5rem;
+        }
+    }
 
+    // Posts > Single Post > Meta
+
+    &__meta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    &__author {
+        @include nav-font;
+        opacity: 0.5;
+        margin-bottom: .5rem;
+    }
+
+    &__date {
+        @include header-font;
+        font-size: .7rem;
+    }
+    
+    // Posts > Single Post > Divider
+    
+    &__divider {
+        @include divider;
+        margin: 2rem auto 2rem;
+    }
+
+    &__divider::before {
+        @include divider-before;
     }
 }

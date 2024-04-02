@@ -1,4 +1,4 @@
-import "./Posts";
+import "./Posts.scss";
 
 function Posts({ posts }) {
 
@@ -7,64 +7,73 @@ function Posts({ posts }) {
 
     return (
         <div className="posts">
+            { posts ? posts.map((post) => {
 
-            {posts
-                ? posts.map((post) => {
+                // destructure post properties
+                const {
+                    id,
+                    user_id,
+                    post_type,
+                    post_title,
+                    post_body,
+                    post_file,
+                    created_at
+                } = post;
 
-                        // destructure post properties
-                        const {
-                            id,
-                            user_id,
-                            post_type,
-                            post_title,
-                            post_body,
-                            post_file,
-                            created_at
-                        } = post;
+                // denote post author
+                let author;
+                user_id === 1 ? (author = '~ LIRI') : (author = '~ PHIN');
 
-                        // denote post author
-                        let author;
-                        user_id === 1 
-                            ? author = 'Liri'
-                            : author = 'Phin'
+                // construct photo post image path
+                let photoPath = '';
+                post_type === 'photo' && (photoPath = `${publicUrl}/images/${post_file}`);
 
-                        // format post date
-                        const date = new Date(created_at).toLocaleDateString();
-                        
-                        // split post body into paragraphs
-                        const paragraphs = post_body.split("\n\n");
+                // format post date
+                const date = new Date(created_at).toLocaleDateString();
 
-                        return (
+                // split post body into paragraphs
+                const paragraphs = post_body.split("\n\n");
 
-                            <div key={id} className="posts__post">
-                                
-                                {/* POST TITLE */}
-                                <p className="posts__title">{post_title}</p>
-                                
-                                {/* POST META */}
-                                <div className="posts__meta">
-                                    <p className="posts__date">{date}</p>
-                                    <p className="posts__author">{author}</p>
-                                    <p className="posts__type">{post_type}</p>
-                                </div>
+                return (
+                    <div key={id} className="posts__post">
 
-                                {/* POST BODY */}
-                                <div className="posts__body">
+                        {/* POST TITLE */}
+                        <div className="posts__title-container">
+                            <h3 className="posts__title">{post_title}</h3>
+                        </div>
 
-                                    {/* if photo post, display the photo */}
-                                    {post_type === 'photo' && (
-                                        <img src={`${publicUrl}/images/${post_file}`} alt={`a photo by ${author}`} />
-                                    )}
+                        {/* POST BODY */}
+                        <div className="posts__body-container">
 
-                                    {/* display body paragraphs */}
-                                    {paragraphs.map((paragraph, index) => (
-                                        <p className="posts__paragraph" key={index}>{paragraph}</p>
-                                    ))}
-                                </div>
+                            <div className="posts__photo-container">
+
+                                {/* if photo post, display the photo */}
+                                {post_type === 'photo' && (
+                                    <img src={photoPath} className="posts__photo" alt={`a photo by ${author}`} />
+                                )}
+
                             </div>
-                        );
-                    })
-                : ""}
+                            
+                            <div className="posts__text-container">
+
+                                {/* display body paragraphs */}
+                                {paragraphs.map((paragraph, index) => (
+                                    <p className="posts__paragraph" key={index}>{paragraph}</p>
+                                ))}
+                            </div>
+
+                            {/* POST META */}
+                            <div className="posts__meta-container">
+                                <p className="posts__author">{author}</p>
+                                <p className="posts__date">{date}</p>
+                            </div>
+
+                            {/* post divider */}
+                            <div className="posts__divider"></div>
+                        </div>
+                    </div>
+                );
+            }) : ''}
         </div>
     );
 }

@@ -31,3 +31,25 @@
 @mixin header-font {
     font-family: 'Bungee Hairline', sans-serif;
 }
+
+// CUSTOM
+
+// divider
+@mixin divider {
+    content: '';
+    width: 80%;
+    height: 2px;
+    background-color: $divider-colour;
+    position: relative;
+}
+
+@mixin divider-before {
+    content: '';
+    width: .6rem;
+    height: .6rem;
+    position: absolute;
+    top: -.3rem;
+    left: 50%;
+    transform: rotate(45deg);
+    background-color: $divider-colour;
+}
