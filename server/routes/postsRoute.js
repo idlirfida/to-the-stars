@@ -11,7 +11,8 @@ const { v4: uuid } = require("uuid");
 // EVERYTHING
 router
     .route('/')
-    .get(postsController.getAllPosts);
+    .get(postsController.getAllPosts)
+    .post(postsController.makeNewPost);
 
 // MUSINGS
 router

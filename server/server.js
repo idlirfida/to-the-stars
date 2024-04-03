@@ -4,6 +4,7 @@ const app = express(); // instantiate express
 const cors = require('cors'); // import CORS
 require("dotenv").config(); // pull in variables from .env file
 
+
 // IMPORT ROUTES
 const postsRoute = require('./routes/postsRoute');
 
@@ -24,7 +25,7 @@ app.get("/", (_req, res) => {
     const htmlResponse = `
         <h1>Welcome to the API home!</h1>
 
-        <p>There's not much here, really. So you may want to send a get request to /videos. That's where all the good stuff is. It's really up to you, though. You can also just hang out here and.. I don't know.. meditate?</p>
+        <p>There's not much here, really. So you may want to send a get request to /posts. That's where all the good stuff is. It's really up to you, though. You can also just hang out here and.. I don't know.. meditate?</p>
 
         <p>For instance, you might consider closing your eyes, and taking a moment to situate. Once there, you may be compelled to take in a deep breath through the nose, as deep as you can make it, letting your chest expand as big as it can, picturing it ballooning with all the crisp, fresh air travelling through your nostrils. How long can you hold that balloon?</p>
 
@@ -45,7 +46,6 @@ app.get("/", (_req, res) => {
 });
 
 app.use('/posts', postsRoute); // posts route
-// app.use('/users', usersRoute); // users route
 
 
 // START SERVER

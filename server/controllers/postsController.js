@@ -143,6 +143,40 @@ const getLiriMusic = async (_req, res) => {
 
 
 /*
+ * MAKE NEW POST
+ */
+
+const makeNewPost = async (req, res) => {
+    try {
+
+        // destructure incoming request data
+        const { 
+            user_id,
+            post_title,
+            post_type,
+            post_body,
+            post_file
+        } = req.body;
+
+        // construct new post
+        const newPost = await knex('posts').insert({
+            user_id,
+            post_title,
+            post_type,
+            post_body,
+            post_file
+        });
+
+        console.log(newPost);
+            
+        res.status(201).json(newPost);
+    } catch (err) {
+        res.status(500).send('Error creating new resource!');
+    }
+}
+
+
+/*
  * EXPORT MODULES
  */
 
@@ -157,5 +191,6 @@ module.exports = {
     getLiriPosts,
     getLiriMusings,
     getLiriPhotos,
-    getLiriMusic
+    getLiriMusic,
+    makeNewPost
 };
