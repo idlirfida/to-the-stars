@@ -83,22 +83,24 @@ function NewPost() {
                         required
                     ></textarea>
                 </div>
-                <button type="submit" className={submitSuccess ? "new__submit new__submit--success" : "new__submit"} disabled={submitting}>
-                    {submitting ? "Submitting..." : (submitSuccess ? "Submitted!" : "Submit")}
-                </button>
+                <div className="new__form-group new__form-group--button">
+                    <button type="submit" className={submitSuccess ? "new__submit new__submit--success" : "new__submit"} disabled={submitting}>
+                        {submitting ? "Submitting..." : (submitSuccess ? "Submitted!" : "Submit")}
+                    </button>
+                </div>
             </form>
 
             {/* New Photo Post */}
-            <form className="new__form">
+            {/* <form className="new__form">
                 <h3 className="new__form-title">A thousand words..</h3>
-            </form>
+            </form> */}
 
             {/* New Music Post */}
-            {(user === 'liri') 
+            {/* {(user === 'liri') 
                 ?   <form className="new__form">
                         <h3 className="new__form-title">Ephemeral whispers..</h3>
                     </form>
-                : ''}
+                : ''} */}
         </div>
     );
 }

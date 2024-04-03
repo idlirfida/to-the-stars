@@ -1,2 +1,85 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+.new {
+    width: 90%;
+    margin: auto;
+
+    @include tablet {
+        width: 70%;
+    }
+
+    @include desktop {
+        width: 60%;
+    }
+
+    // New Post > Form
+
+    &__form {
+        margin-top: 2rem;
+    }
+
+    // New Post > Form > Form Title
+
+    &__form-title {
+        @include header-font;
+        font-size: .9rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    // New Post > Form > Form Group
+
+    &__form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    &__form-label {
+        @include nav-font;
+        text-transform: uppercase;
+        color: $primary-accent;
+        margin-bottom: .5rem;
+    }
+
+    &__form-input {
+        @include main-font;
+        border-radius: .5rem;
+        outline: 0;
+        border: 0;
+        background-color: $divider-colour;
+        padding: .6rem 1rem;
+        color: $primary-dark;
+        border: 1px solid $divider-colour;
+    }
+
+    &__form-input:active,
+    &__form-input:focus {
+        border: 1px solid $primary-accent;
+    }
+
+    &__form-input--textarea {
+        min-height: 7rem;
+        resize: none;
+    }
+
+    // New Post > Form > Submit
+
+    &__submit {
+        @include header-font;
+        background-color: $primary-dark;
+        color: $primary-white;
+        border-radius: .5rem;
+        border: 0;
+        padding: .6rem 1rem;
+    }
+    
+    &__submit:hover {
+        background-color: $primary-accent;
+    }
+
+    &__submit--success {
+
+    }
+}

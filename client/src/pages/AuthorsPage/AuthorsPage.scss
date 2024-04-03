@@ -3,4 +3,15 @@
 
 .authors {
     min-height: 80vh;
+    width: 90%;
+    margin: auto;
+
+    &__welcome {
+        @include header-font;
+        text-align: center;
+    }
+
+    &__login-message {
+
+    }
 }
