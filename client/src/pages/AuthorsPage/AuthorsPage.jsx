@@ -2,8 +2,6 @@ import "./AuthorsPage.scss";
 import { useState } from 'react';
 import { Outlet } from "react-router-dom";
 import Login from "../../components/Login/Login";
-import NewPost from '../../components/NewPost/NewPost.jsx';
-import EditPosts from '../../components/EditPosts/EditPosts.jsx';
 import AuthorsNavigation from "../../components/AuthorsNavigation/AuthorsNavigation.jsx";
 
 function AuthorsPage() {
