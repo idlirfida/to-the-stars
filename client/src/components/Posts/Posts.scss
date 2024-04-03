@@ -5,6 +5,14 @@
     width: 90%;
     margin: auto;
 
+    @include tablet {
+        width: 70%;
+    }
+
+    @include desktop {
+        width: 60%;
+    }
+
     // Posts > Single Post
 
     &__post {
@@ -16,7 +24,6 @@
 
     &__title-container {
         text-align: center;
-        margin-bottom: 1rem;
     }
 
     &__title {
@@ -26,26 +33,14 @@
     }
 
     // Posts > Single Post > Body
-    
-    &__body-container {
-
-    }
 
     // photo
     
     &__photo-container {
-        margin-bottom: 1rem;
-    }
-    
-    &__photo {
-
+        margin: 1rem 0;
     }
 
     // text
-
-    &__text-container {
-
-    }
 
     &__paragraph {
         margin-bottom: 1rem;
