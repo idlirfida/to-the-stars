@@ -5,9 +5,24 @@ function Posts({ posts }) {
     // store server-side public folder path
     const publicUrl = import.meta.env.VITE_PUBLIC_URL;
 
+    // create function for sorting incoming posts by date
+    const sortByDate = (a, b) => {
+        if (a.created_at < b.created_at) {
+            return 1;
+        }
+        if (a.created_at > b.created_at) {
+            return -1;
+        }
+        return 0;
+    };
+
+    // sort incoming posts by date
+    const sortedPosts = posts ? posts.sort(sortByDate) : [];
+
+
     return (
         <div className="posts">
-            { posts ? posts.map((post) => {
+            { sortedPosts ? sortedPosts.map((post) => {
 
                 // destructure post properties
                 const {
