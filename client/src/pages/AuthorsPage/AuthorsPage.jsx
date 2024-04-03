@@ -28,7 +28,6 @@ function AuthorsPage() {
         // if no user is logged in, show the login component
         return (
             <div className="authors">
-                <h2 className="authors__message">Please log in!</h2>
                 <Login onLoginSuccess={onLoginSuccess} />
             </div>
         );

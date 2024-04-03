@@ -2,33 +2,72 @@
 @use '../../styles/partials/mixins' as *;
 
 .login {
+    width: 90%;
+    margin: auto;
 
-
-    &__form {
-
+    @include tablet {
+        width: 70%;
     }
 
-    &__user {
-
+    @include desktop {
+        width: 60%;
+    }
+    
+    &__message {
+        @include header-font;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
-    &__password {
-
+    &__group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
     }
 
     &__label {
-
+        @include nav-font;
+        text-transform: uppercase;
+        color: $primary-accent;
+        margin-bottom: .5rem;
     }
 
     &__input {
+        @include main-font;
+        border-radius: .5rem;
+        outline: 0;
+        border: 0;
+        background-color: $divider-colour;
+        padding: .6rem 1rem;
+        color: $primary-dark;
+        border: 1px solid $divider-colour;
+    }
 
+    &__input:active,
+    &__input:focus {
+        border: 1px solid $primary-accent;
     }
 
     &__button {
+        @include header-font;
+        background-color: $primary-dark;
+        color: $primary-white;
+        border-radius: .5rem;
+        border: 0;
+        padding: .6rem 1rem;
+    }
 
+    &__button:hover {
+        background-color: $primary-accent;
     }
 
     &__error {
-        
+        @include header-font;
+        margin-top: 2rem;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 }
