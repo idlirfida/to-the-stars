@@ -22,7 +22,7 @@ function AuthorsPage() {
             <div className="authors">
                 <AuthorsNavigation />
                 <h2 className="authors__welcome">Welcome, {(user === 'liri') ? 'Liri' : 'Phin'}!</h2>
-                <Outlet />
+                <Outlet context={{ user }} />
             </div>
         );
     } else {
