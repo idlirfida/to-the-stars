@@ -19,7 +19,8 @@ function AuthorsPage() {
         return (
             <div className="authors">
                 <AuthorsNavigation />
-                <h2 className="authors__welcome">Welcome, {(user === 'liri') ? 'Liri' : 'Phin'}!</h2>
+                <h2 className="authors__message">
+                    Welcome, {(user === 'liri') ? 'Liri' : 'Phin'}!</h2>
                 <Outlet context={{ user }} />
             </div>
         );
@@ -27,7 +28,7 @@ function AuthorsPage() {
         // if no user is logged in, show the login component
         return (
             <div className="authors">
-                <h2 className="authors__login-message">Please log in!</h2>
+                <h2 className="authors__message">Please log in!</h2>
                 <Login onLoginSuccess={onLoginSuccess} />
             </div>
         );

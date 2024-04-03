@@ -6,12 +6,15 @@
     width: 90%;
     margin: auto;
 
-    &__welcome {
+    &__message {
         @include header-font;
         text-align: center;
     }
 
-    &__login-message {
-
+    &__sub-message {
+        @include header-font;
+        font-size: .9rem;
+        text-align: center;
+        margin-top: 1.5rem;
     }
 }
