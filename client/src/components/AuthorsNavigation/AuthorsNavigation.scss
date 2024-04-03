@@ -1,0 +1,25 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.authors-nav {
+    @include header-font;
+    padding: 2rem 0;
+    text-align: center;
+
+    &__link {
+        font-size: 1rem;
+        text-decoration: none;
+        padding: .5rem;
+        color: $primary-dark;
+        font-weight: $bold;
+    }
+
+    &__link:hover {
+        border-bottom: 1px solid $primary-dark;
+    }
+
+    &__link.active {
+        color: $primary-accent;
+        text-decoration: none;
+    }
+}

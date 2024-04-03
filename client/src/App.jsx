@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import PhinPage from "./pages/PhinPage/PhinPage.jsx";
 import LiriPage from "./pages/LiriPage/LiriPage.jsx";
 import AuthorsPage from "./pages/AuthorsPage/AuthorsPage.jsx";
+import NewPost from "./components/NewPost/NewPost.jsx";
+import EditPosts from "./components/EditPosts/EditPosts.jsx";
 import PageNotFound from "./pages/PageNotFound/PageNotFound.jsx";
 
 function App() {
@@ -28,7 +30,10 @@ function App() {
                         <Route path="photos" element={<LiriPage />} />
                         <Route path="music" element={<LiriPage />} />
                     </Route>
-                    <Route path="/authors" element={<AuthorsPage />} />
+                    <Route path="/authors" element={<AuthorsPage />}>
+                        <Route path="new" element={<NewPost />} />
+                        <Route path="old" element={<EditPosts />} />
+                    </Route>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
                 <Footer />
