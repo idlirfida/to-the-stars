@@ -166,8 +166,6 @@ const makeNewPost = async (req, res) => {
             post_body,
             post_file
         });
-
-        console.log(newPost);
             
         res.status(201).json(newPost);
     } catch (err) {
