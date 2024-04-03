@@ -31,7 +31,7 @@ function HomePage() {
             const response = await axios.get(`${apiPath}`);
             setPosts(response.data);
         } catch (err) {
-            console.error('Having some trouble fetching te requested response!', err);
+            console.error('Having some trouble fetching the requested resource!', err);
         }
     }
 

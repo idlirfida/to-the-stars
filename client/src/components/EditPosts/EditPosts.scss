@@ -1,2 +1,104 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
+
+.edit {
+    width: 90%;
+    margin: auto;
+
+    @include tablet {
+        width: 70%;
+    }
+
+    @include desktop {
+        width: 60%;
+    }
+
+    // Edit > Messages
+
+    &__sub-message {
+        @include header-font;
+        font-size: .8rem;
+        text-align: center;
+        margin: 1.5rem;
+    }
+
+    &__message {
+        @include header-font;
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 1.5rem 0 3rem;
+    }
+
+    // Edit > Single Post
+
+    &__post {
+        color: $primary-dark;
+        margin-bottom: 1rem;
+    }
+
+    // Edit > Single Post > Divider
+    
+    &__divider {
+        @include divider;
+        margin: 2rem auto 2rem;
+    }
+
+    &__divider::before {
+        @include divider-before;
+    }
+
+    // Edit > Single Post > Title
+
+    &__title-container {
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2rem;
+        color: $primary-dark;
+        opacity: 0.4;
+    }
+
+    // Edit > Single Post > Body
+
+    // photo
+    
+    &__photo-container {
+        margin: 1rem 0;
+    }
+
+    // text
+
+    &__paragraph {
+        margin-bottom: 1rem;
+        opacity: 0.7;
+        text-align: justify;
+        
+        @include tablet {
+            text-align: left;
+            line-height: 1.5rem;
+        }
+    }
+    
+    // Edit > Single Post > Edit Button
+
+    &__button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+
+    &__button {
+        @include header-font;
+        padding: .5rem 1rem;
+        border: none;
+        color: $primary-dark;
+        border-radius: 1rem;
+    }
+
+    &__button:hover {
+        background-color: $primary-accent;
+        color: $primary-white;
+    }
+}

@@ -40,7 +40,7 @@ function LiriPage() {
     }, [apiPath]);
 
     return (
-        <div>
+        <div className="liri">
             <SubNavigation />
             <Posts posts={posts} />
         </div>

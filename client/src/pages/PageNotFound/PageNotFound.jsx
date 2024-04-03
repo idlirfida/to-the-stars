@@ -5,11 +5,17 @@ function PageNotFound() {
   return (
     <div className="not-found">
         <SubNavigation />
-        <p className="not-found__message">
-            So sorry! The page you're looking for does not exist. Maybe head back and try again?
-        </p>
+        <h3 className="not-found__message">
+            So sorry! 
+        </h3>
+        <h3 className="not-found__sub-message">
+            There's no such page.
+        </h3>
+        <h3 className="not-found__sub-message">
+            Maybe head back and try again?
+        </h3>
     </div>
   )
 }
 
-export default PageNotFound
+export default PageNotFound;
