@@ -40,7 +40,7 @@ function PhinPage() {
     }, [apiPath]);
 
     return (
-        <div>
+        <div className="phin">
             <SubNavigation />
             <Posts posts={posts} />
         </div>

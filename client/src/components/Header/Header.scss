@@ -9,6 +9,7 @@
     height: 50vw;
     text-align: center;
     color: $primary-white;
+    padding-top: 1rem;
 
     &__link {
         color: $primary-white;
@@ -16,6 +17,10 @@
         padding: .3rem;
         text-decoration: none;
         @include nav-font;
+
+        @include tablet {
+            font-size: 1.5rem;
+        }
     }
 
     &__link.active {
@@ -25,5 +30,11 @@
     &__title {
         @include header-font;
         opacity: 0.7;
+        padding-top: 1rem;
+
+        @include tablet {
+            margin-top: 2rem;
+            font-size: 3rem;
+        }
     }
 }
