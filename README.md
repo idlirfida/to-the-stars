@@ -2,13 +2,15 @@
 
 ## Overview
 
-To the Stars is a bespoke, full-stack travelogue platform intended for my partner and I to share our experience with family and friends as we embark on an extended trip around Europe.
+To the Stars is a bespoke, responsive, full-stack travelogue platform intended for my partner and I to share our experience with family and friends as we embark on an extended trip around Europe.
+
+To the Stars was developed as the Capstone project during my studies at BrainStation's January, 2024 Web Development Cohort.
 
 ### Problem
 
-My partner and I are on the verge of starting an extended trip to Europe that will span several months. We both like writing, my partner enjoys photography, and I love making music. We have dreamt for a long time of an extended travel adventure, which we can document for our family and friends, and for posterity.
+During the course of development of this project, my partner and I had just begun a shoestring trip across Europe that would span several months. We both like writing, my partner enjoys photography, and I love making music. We had dreamt for a long time of an extended travel adventure, which we could document for our family and friends, and for posterity.
 
-Previous attempts to share these experiences have been disjointed, between sending pictures to group chats and sharing Google Photos albums. Having a centralized platform to deliver the content we create will aid us both in inspiration and motivation to continue to document our experiences, and to experience them more insighfully, more memorably. It will also make it easier for our intended audience to be able to stay up to date with what we are doing, and hopefully live our adventure vicariously through us.
+Previous attempts to share similar experiences had been disjointed, between sending pictures to group chats and sharing Google Photos albums. I hoped having a centralized platform to deliver the content we created would aid us both in inspiration and motivation to continue to document our experiences, and to experience them more insighfully, more memorably. It would also make it easier for our intended audience to be able to stay up to date with what we were doing, and hopefully live our adventure vicariously through us.
 
 ### User Profile
 
@@ -18,20 +20,45 @@ Previous attempts to share these experiences have been disjointed, between sendi
 
 ### Features
 
--  **As an author**
-    - I want to be able to log in to my account.
-    - I want to be able to create a post with text, and optionally pictures/videos/songs.
-    - I want to be able to edit or delete my previous posts.
-    - I want to be able to delete comments site-wide that are inappropriate, or I don't want displayed.
-    - I want to be able to respond to comments site-wide.  
+-  **Authors**
+    - Will be able to log in to their accounts.
+    - Will be able to create a post with text, and optionally pictures/videos/songs.
+    - Will be able to edit or delete their previous posts.
+    - Will be able to delete comments site-wide that are inappropriate, or they want displayed.
+    - Will be able to respond to comments site-wide.  
 
--  **As a logged in user**
-    - I want to be able to be able to comment on, or like posts to the site.
-    - I want to be able to log out.
+-  **Logged-in Users**
+    - Will be able to consume the content created by the authors.
+    - Will be able to be able to comment on, or like posts to the site.
+    - Will be able to log out.
 
--  **As a visitor**
-    - I want to be able to peruse the content on the site.
-    - I want to be able to create an account.
+-  **Visitors**
+    - Will be able to peruse the content on the site.
+    - Will be able to create an account.
+
+
+## Instructions
+
+### Installation
+
+1. Clone the repository.
+2. Install Node dependencies for both client and server.
+3. Create your own .env for both server and client based on included .env.sample file.
+4. In command line, navigate to server folder, and run `npm start`.
+5. In command line, navigate to client folder, and run `npm start`.
+
+### Usage
+
+- The top menu navigates between the Home Page, and individual Author pages.
+- The sub-navigation menu filters between the post categories for each page.
+- The Authors link in the page footer navigates to the Authors view.
+    - You will need to log in to access this functionality.
+    - There are only two users, with names 'phin' and 'liri' (sans quotes).
+    - Use the password you created in the client-side .env for either user to log in.
+- Once in the Authors page, there are two sub-pages: Create and Revise.
+    - The Create page at present only has the ability to create text posts. Different types of posts are in the roadmap.
+    - The Revise page at present only has the ability to pull all posts by the logged in author. Edit and Delete functionality is on the roadmap.
+
 
 ## Implementation
 
@@ -40,7 +67,10 @@ Previous attempts to share these experiences have been disjointed, between sendi
 - React
 - MySQL
 - Express
+- SASS
+
 - Client libraries:
+    - vite
 	- react
 	- react-router
 	- react-router-dom
@@ -48,196 +78,141 @@ Previous attempts to share these experiences have been disjointed, between sendi
     - sass
 
 - Server libraries:
+    - cors
+    - dotenv
+    - multer
+    - mysql2
+    - nodemon
 	- knex
     - express
+    - uuid
 
 ### APIs
 
-The first sprint will not implement any external APIs.
+The project does not use any external APIs, but does employ a custom API for retrieving posts from the server side, which itself communicates with the MySQL database through Knex.
 
 ### Sitemap
 
 **Public View**
-- *Home* (collection of latest posts by both)
+- *Home* (collection of latest posts by both authors)
 - *Liri* (collection of latest posts by Liri)
 	- *Musings* (collection of writing)
-	- *Gallery* (collection of photos with captions)
-	- *Music* (collection of music with captions/videos)
+	- *Gallery* (collection of photos with optional titles and captions)
+	- *Music* (collection of music and music videos with optional titles and captions)
 - *Phin* (collection of latest posts by Phin)
 	- *Musings* (collection of writing)
-	- *Gallery* (collection of photos with captions)
+	- *Gallery* (collection of photos with optional titles and captions)
 
 **Author View**
-- *New* page (new post)
-- *Old* page (manage old posts)
-- *Edit* page (edit single post)
+(accessible through the Authors link in the site footer)
+- *Login* page (Authors log in here)
+- *Create* page (create new posts)
+- *Revise* page (edit or delete old posts)
 
-### Mockups
 
-#### Mockup: Home Page
-![](Ω-screencaps/mockup.png)
+### Screenshots
 
-#### Wireframe: Home Page
-![](Ω-screencaps/home-page.png)
+#### Public View
+![](Ω-screencaps/submission/liri-musings.png)
+![](Ω-screencaps/submission/phin-musings.png)
+![](Ω-screencaps/submission/phin-photos.png)
 
-#### Wireframe: Phin Page
-![](Ω-screencaps/phin-page.png)
-
-#### Wireframe: Liri Page
-![](Ω-screencaps/liri-page.png)
-
-#### Wireframe: Single Post
-![](Ω-screencaps/single-post.png)
-
-#### Wireframe: Single Comment Form
-![](Ω-screencaps/comment-form.png)
-
-#### Wireframe: Author Page / New
-![](Ω-screencaps/author-page-new.png)
-
-#### Wireframe: Author Page / Old
-![](Ω-screencaps/author-page-old.png)
-
-#### Wireframe: Author Page / Edit
-![](Ω-screencaps/author-page-edit.png)
+#### Authors View
+![](Ω-screencaps/submission/authors-login.png)
+![](Ω-screencaps/submission/authors-page.png)
+![](Ω-screencaps/submission/authors-create.png)
+![](Ω-screencaps/submission/authors-revise.png)
 
 ### Data
 
+At the time of submission, visitor account creation/login, and commenting functionality is not live, but is planned for the future. Ultimately, the SQL data will look as below:
+
 ![](Ω-screencaps/sql-diagram.png)
 
-### Endpoints
+### API Endpoints
 
 **GET /**
 
-- Get all posts from both authors for the homepage
+- API welcome message.
+
+**GET /posts**
+
+- Get all posts by both authors.
+
+**GET /posts/musings**
+
+- Get all text posts by both authors.
+
+**GET /posts/photos**
+
+- Get all photo posts by both authors.
+
+**GET /posts/music**
+
+- Get all music posts by Liri.
+
+**POST /posts**
+
+- Create a new post.
 
 **GET /phin**
 
-- Get all posts from Phin
+- Get all posts by Phin.
 
-**POST /phin**
+**GET /phin/musings**
 
-- Phin makes a post
+- Get all text posts by Phin.
 
-**DELETE /phin/:postId**
+**GET /phin/photos**
 
-- Delete post by Phin
-
-**PUT /phin/:postId**
-
-- Edit post by Phin
-
-**POST /phin/:postId/comments**
-
-- Make a comment to a post by Phin
-
-**DELETE /phin/:postId/comments/:commentId**
-
-- Make a comment to a post by Phin
+- Get all photo posts by Phin.
 
 **GET /liri**
 
-- Get all posts from Liri
+- Get all posts by Liri.
 
-**POST /liri**
+**GET /liri/musings**
 
-- Liri makes a post
+- Get all text posts by Liri.
 
-**DELETE /liri/:postId**
+**GET /liri/photos**
 
-- Delete post by Liri
+- Get all photo posts by Liri.
 
-**PUT /liri/:postId**
+**GET /liri/music**
 
-- Edit post by Liri
+- Get all music posts by Liri.
 
-**POST /liri/:postId/comments**
-
-- Make a comment to a post by Liri
-
-**DELETE /liri/:postId/comments/:commentId**
-
-- Make a comment to a post by Liri
-
-**POST /users/register**
-
-- Users register for an account in order to comment
-
-**POST /users/login**
-
-- Users log in in order to post a comment
 
 ### Auth
 
 - JWT auth
-    - Before adding auth, all API requests will be using a fake user with id 1
-    - Added after core features have first been implemented
-    - Store JWT in localStorage, remove when a user logs out
-    - Add states for logged in showing different UI in places listed in mockups
+    - Before adding auth, all API requests will be without authentication.
+    - To be added after core features have first been implemented.
+    - Store JWT in localStorage, remove when a user logs out.
+    - Add states for logged in showing different UI components and states.
 
-## Roadmap
 
-1. Setup and Boilerplate
-    - Initialize React project with necessary routes and basic pages
-    - Create Express server with initial routing setup and placeholder responses
-    
-2. Database Setup
-    - Create Knex migrations for users, posts, and comments tables
-    - Define schema for users table (id, email, password, role)
-    - Define schema for posts table (id, user_id, post_type, post_title, post_body, date_posted, post_file)
-    - Define schema for comments table (id, post_id, user_id, comment_body, date_commented)
+## Retrospective
 
-3. Implement form to create new posts (text, photo, song, video)
-    - Create POST /posts endpoint to add new posts to the database
-    - Display Posts
+### Planned Features
 
-4. Design and implement home page to display recent posts
-    - Create GET /posts endpoint to fetch and display posts
-    - Implement pagination for posts listing
-    - View and Edit Posts
-
-5. Create post details page to view full post content
-    - Implement DELETE /posts/:id endpoint to delete posts
-    - Implement UPDATE /posts/:id endpoint to edit existing posts
-
-6. Comments Feature
-    - Create comments table schema (id, post_id, user_id, comment, date_commented)
-    - Implement form to add comments to posts
-    - Create POST /posts/:id/comments endpoint to add comments
-    - Display comments on post details page
-
-7. File Uploads
-    - Allow users to upload photos, songs, or videos when creating posts
-    - Implement file storage using multer and cloud storage (optional)
-
-8. Write unit tests for server endpoints and database queries
-    - Implement client-side form validation for user inputs
-
-9. Styling and UI Enhancements
-    - Improve overall user interface and user experience
-    - Implement responsive design for mobile and desktop views
-
-10. Deployment and Production
-    - Deploy client and server applications to my own web space
-    - Setup production-ready database (MySQL, PostgreSQL, etc.)
-
-11. Bug Fixes and Optimization
-    - Conduct thorough testing to identify and fix any bugs
-
-12. Documentation and Readme
-    - Document API endpoints, usage, and expected responses
-    - Update project README with detailed instructions for setup and usage
-
-13. Demo and Presentation
-    - Prepare for project demo day
-    - Showcase features, functionality, and technical aspects
-    - Prepare demo video
-
-## Nice-to-haves
-
-- Authentication system for both Authors and Commenters.
-- Archives of old posts, for both Visitors and Authors on the Edit page.
+- Create photo and music posts.
+- Edit and delete old posts.
+- True authentication system for both Authors and Commenters.
+- Ability for logged-in visitors to create comments.
+- Ability for authors to delete comments.
+- Archives of old posts, for both Visitors and Authors on the Revise page.
 - Search functionality for old posts.
-- More fleshed out styling for Author pages.
-- Elegant animations on user interaction.
-- Audio player.
+- Infinite scrolling for public view pages.
+- Audio and video player.
+
+### Lessons Learned
+
+Although the project was envisioned to be minimal in application, it turned out to have a significant amount of complexity in implementation. I ran into several blockers during the course of development, not least of which was the inconvenience of developing on a tight timeline while managing international travel and poor internet connectivity, so in that way, the project itself is a manifestation of the ongoing adventure.
+
+### Farewell
+
+Thank you for checking out my project. You can get in touch with me either through this GitHub page, or [by email](mailto:idlirfida@gmail.com).
+
+So long, and thanks for all the fish.
