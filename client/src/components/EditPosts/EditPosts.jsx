@@ -89,6 +89,7 @@ function EditPosts() {
 
                                 <div className="edit__button-container">
                                     <button className="edit__button">Edit</button>
+                                    <button className="edit__button">Delete</button>
                                 </div>
                             </div>
                         );
